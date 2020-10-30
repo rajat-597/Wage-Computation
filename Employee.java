@@ -1,44 +1,53 @@
 package practice3;
 
-import java.util.Scanner;
-
 public class Employee {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc =new Scanner(System.in);
-		int n = sc.nextInt();
+		// TODO Auto-generated method stu
 		System.out.println("Welcome to Employee Wage Computatation program");
-		Employee e = new Employee();
-		e.check();
-		e.wages();
-		e.parttimewages(n);
-		
+		Employee emp = new Employee();
+		emp.check();
+	    int fulldaywages= emp.wages();
+		System.out.println("wages for full day is " + fulldaywages);
+	    int halfdaywages = emp.halfwages();
+		System.out.println("wages for part time employee is " + halfdaywages );
+
 	}
 public void check()
 {
 	double d = Math.floor(Math.random()*2);
-	if(d==0){
-		System.out.println("Employee is not present");
+	if(d==1)
+	{
+		System.out.println("Employee is present");
+		double d1 = Math.floor(Math.random()*2);
+		if(d1==1)
+		{
+			System.out.println("Employee is working for full day");
+		}
+		else
+		{
+			System.out.println("Employee is working for part time");
+		}
+
 	}
 	else
 	{
-		System.out.println("Employee is present");
+		
+		System.out.println("Employee is not present");
 	}
 }
-public void wages()
+public int wages()
 {
-	int wph = 20;
-	int fdw = 8;
-	int total;
-	total=wph*fdw;
-	System.out.println("Daily Employee Wages "+ total);
+	int wage_per_hour = 20;
+	int full_day_work = 8;
+	int Daily_Wages = wage_per_hour * full_day_work ; 
+	return Daily_Wages;
 }
-public int parttimewages(int x) {
-	int pth = 8;
-	System.out.println("part time employee is "+x);
-	int tw=pth*x;
-	return tw;	
+public int halfwages()
+{
+	int wage_per_hour = 20;
+	int part_time_hour=4;
+	int halfday_wages = part_time_hour * wage_per_hour;
+	return halfday_wages;
 }
-
 }
