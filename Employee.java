@@ -11,6 +11,9 @@ public class Employee {
 		System.out.println("wages for full day is " + fulldaywages);
 	    int halfdaywages = emp.halfwages();
 		System.out.println("wages for part time employee is " + halfdaywages );
+		int total_workingdays=20;
+		int monthly_wages= total_workingdays* fulldaywages;
+		System.out.println("monthly wages of Enmployee is "+ monthly_wages);
 
 	}
 public void check()
@@ -50,4 +53,5 @@ public int halfwages()
 	int halfday_wages = part_time_hour * wage_per_hour;
 	return halfday_wages;
 }
+
 }
