@@ -7,6 +7,8 @@ public class Employee {
 		System.out.println("Welcome to Employee Wage Computatation program");
 		Employee e = new Employee();
 		e.check();
+		e.wages();
+		
 	}
 public void check()
 {
@@ -19,6 +21,14 @@ public void check()
 	{
 		System.out.println("Employee is present");
 	}
+}
+public void wages()
+{
+	int wph = 20;
+	int fdw = 8;
+	int total;
+	total=wph*fdw;
+	System.out.println("Daily Employee Wages "+ total);
 }
 
 }
