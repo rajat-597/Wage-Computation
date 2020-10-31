@@ -1,20 +1,19 @@
 package practice3;
 
 public class Employee {
+	
+  static  Employee emp = new Employee();
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stu
 		System.out.println("Welcome to Employee Wage Computatation program");
-		Employee emp = new Employee();
 		emp.check();
 	    int fulldaywages= emp.wages();
 		System.out.println("wages for full day is " + fulldaywages);
-	    int halfdaywages = emp.halfwages();
-		System.out.println("wages for part time employee is " + halfdaywages );
-		int total_workingdays=20;
-		int monthly_wages= total_workingdays* fulldaywages;
-		System.out.println("monthly wages of Enmployee is "+ monthly_wages);
-
+	    int parttimewages = emp.halfwages();
+		System.out.println("wages for part time employee is " + parttimewages );
+		emp.monthlywages();
 	}
 public void check()
 {
@@ -52,6 +51,27 @@ public int halfwages()
 	int part_time_hour=4;
 	int halfday_wages = part_time_hour * wage_per_hour;
 	return halfday_wages;
+}
+
+public void monthlywages()
+{
+	int count=0;
+	int Monthly_Wage;
+	for(int i=0;i<20;i++)
+	{
+		double d = Math.floor(Math.random()*5);
+		if(d==1)
+			count++;
+		else if(d==0)
+			count--;
+	}
+	if(count>0) {
+	System.out.println("Number of working days in a month is " + count);
+	Monthly_Wage = count * emp.wages();
+	System.out.println("monthly Wages pf the Employee is "+ Monthly_Wage);
+	}
+	else
+		System.out.println("Employee was absent for whole month");
 }
 
 }
